@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Global Resource
   - DeadZone
+  - Good
+  - Bad
   layers:
   - Default
   - TransparentFX

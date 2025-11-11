@@ -1,37 +1,3 @@
-//using UnityEngine;
-//using Mediapipe.Unity.Sample.HandLandmarkDetection;
-
-//public class HandTrackerTest : MonoBehaviour
-//{
-//    public HandLandmarkerRunner runner;
-//    public Vector3 handCenter;
-
-
-//    void Update()
-//    {
-//        var result = runner.LatestResult;
-//        if (result.handLandmarks != null && result.handLandmarks.Count > 0)
-//        {
-//            var hand = result.handLandmarks[0];
-//            var landmarks = hand.landmarks;
-
-//            Vector3 handCenter = Vector3.zero;
-//            foreach (var lm in landmarks)
-//            {
-//                handCenter += new Vector3(lm.x - 0.5f, -(lm.y - 0.5f), 0);
-//            }
-//           // handCenter /= landmarks.Count;
-
-//            handCenter = handCenter / landmarks.Count * 5f;
-
-
-//            //Debug.Log($" Hand center: {handCenter}");
-//        }
-
-
-//    }
-//}
-
 using UnityEngine;
 using Mediapipe.Unity.Sample.HandLandmarkDetection;
 using System.Collections.Generic;
