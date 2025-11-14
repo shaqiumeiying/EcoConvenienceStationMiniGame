@@ -120,11 +120,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handTracker: {fileID: 0}
+  isGoodBall: 1
   catchDistance: 3
-  fallSpeed: 1.5
+  fallSpeed: 2
   destroyY: -5
-  audioSource: {fileID: 0}
-  catchSound: {fileID: 8300000, guid: 385a34ca20b110d40970d1e36773fabe, type: 3}
 --- !u!54 &3728716055020475576
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -134,8 +133,8 @@ Rigidbody:
   m_GameObject: {fileID: 6417806191274053752}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 10
-  m_AngularDrag: 10
+  m_Drag: 5
+  m_AngularDrag: 5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
