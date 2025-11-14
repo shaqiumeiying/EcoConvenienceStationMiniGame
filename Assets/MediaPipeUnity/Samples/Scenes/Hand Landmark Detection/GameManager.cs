@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -128,6 +129,11 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        if (!gameRunning && Input.GetKeyDown(KeyCode.Return))
+        {
+            RestartGame();
+        }
+
         if (!gameRunning) return;
 
         UpdateScoreUI();
@@ -229,5 +235,10 @@ public class GameManager : MonoBehaviour
     {
         if (clip != null)
             audioSource.PlayOneShot(clip);
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
