@@ -69,7 +69,9 @@ public class BallCatcher : MonoBehaviour
         if (handTracker == null || isCaught)
             return;
 
-        Vector3 handPos = handTracker.handCenter;
+        //Vector3 handPos = handTracker.handCenter;
+        Vector3 handPos = handTracker.fingerTipPos;
+
         if (handPos == Vector3.zero)
             return;
 
