@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/MediaPipeUnity/Samples/Scenes/Hand Landmark Detection/HandCatchGame.unity
+    guid: c7b36339986d401469d1200134e9323e
   m_configObjects: {}
