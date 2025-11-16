@@ -2628,7 +2628,7 @@ MonoBehaviour:
   - {fileID: 7915126834397344799, guid: 66fe837fe8442ef46a57a3143b64e494, type: 3}
   - {fileID: 3495104706608863916, guid: a989ce7336b49ce4387b0a278751fd7b, type: 3}
   goodRate: 0.4
-  spawnHeight: 12
+  spawnHeight: 13
   xRange: 2.5
   zPosition: 0
   minDelayRange: {x: 0.3, y: 0.8}
