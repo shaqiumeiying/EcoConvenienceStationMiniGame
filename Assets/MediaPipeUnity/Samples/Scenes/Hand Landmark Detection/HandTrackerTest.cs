@@ -42,6 +42,16 @@ public class HandTrackerTest : MonoBehaviour
     public HandLandmarkerRunner runner;
     public Vector3 fingerTipPos;
 
+    //comment to debug
+    void Start()
+    {
+        foreach (var anno in FindObjectsOfType<MonoBehaviour>())
+        {
+            if (anno.name.Contains("Annotation"))
+                anno.gameObject.SetActive(false);
+        }
+    }
+
     void Update()
     {
         var result = runner.LatestResult;

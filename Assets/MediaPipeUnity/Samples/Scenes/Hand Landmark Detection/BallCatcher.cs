@@ -56,6 +56,7 @@ public class BallCatcher : MonoBehaviour
 
     private bool isCaught = false;
 
+
     void Update()
     {
         transform.position += Vector3.down * fallSpeed * Time.deltaTime;
