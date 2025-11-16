@@ -94,7 +94,6 @@ public class BallSpawner : MonoBehaviour
         BallCatcher catcher = newBall.GetComponent<BallCatcher>();
         if (catcher != null)
         {
-            catcher.handTracker = handTracker;
             catcher.fallSpeed = Random.Range(1.0f, 3.0f);
             catcher.isGoodBall = isGood;
         }
