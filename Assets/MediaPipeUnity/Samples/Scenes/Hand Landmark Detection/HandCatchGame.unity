@@ -2627,7 +2627,7 @@ MonoBehaviour:
   - {fileID: 1992464261724297448, guid: c3e8d2b04409eca499c39b81179b12c7, type: 3}
   - {fileID: 7915126834397344799, guid: 66fe837fe8442ef46a57a3143b64e494, type: 3}
   - {fileID: 3495104706608863916, guid: a989ce7336b49ce4387b0a278751fd7b, type: 3}
-  goodRate: 0.4
+  goodRate: 0.5
   spawnHeight: 13
   xRange: 2.5
   zPosition: 0
@@ -2788,8 +2788,8 @@ MonoBehaviour:
   badText: {fileID: 300116739}
   percentageText: {fileID: 1460664434}
   percentagePanel: {fileID: 79564959}
-  threshold: 1
-  maxScore: 20
+  threshold: 5
+  maxScore: 30
   minPercent: 50
   maxPercent: 98
   materialPanel: {fileID: 2142315778}
