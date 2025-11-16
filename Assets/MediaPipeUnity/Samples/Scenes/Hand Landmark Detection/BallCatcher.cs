@@ -47,7 +47,7 @@ using UnityEngine;
 public class BallCatcher : MonoBehaviour
 {
     public HandTrackerTest handTracker;
-    public bool isGoodBall = true;
+    public bool isGoodBall = true; 
 
     [Header("Detection Settings")]
     public float catchDistance = 0.25f;

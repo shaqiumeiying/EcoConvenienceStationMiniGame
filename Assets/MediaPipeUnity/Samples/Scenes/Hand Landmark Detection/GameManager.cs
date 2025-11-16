@@ -15,6 +15,9 @@ public class MaterialInfo
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    public GameObject confettiPrefab;
+
+
 
     [Header("Audio Settings")]
     public AudioClip goodSound;
@@ -40,6 +43,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text goodText;
     public TMP_Text badText;
     public TMP_Text percentageText;
+    public GameObject percentagePanel;
 
     [Header("Performance Settings")]
     public int threshold = 6;
@@ -78,6 +82,7 @@ public class GameManager : MonoBehaviour
         // Init state
         timer = gameTime;
         summaryPanel.SetActive(false);
+        percentagePanel.SetActive(false);
         materialPanel.SetActive(false);
     }
 
@@ -170,33 +175,32 @@ public class GameManager : MonoBehaviour
         if (spawner != null)
             spawner.enabled = false;
 
-        // Destroy all balls
+        // Destroy balls
         foreach (BallCatcher ball in FindObjectsOfType<BallCatcher>())
             Destroy(ball.gameObject);
 
         PlaySound(finishSound);
+        Instantiate(confettiPrefab);
 
-        // Show summary
+        // Show Summary
         summaryPanel.SetActive(true);
-        goodText.text = goodCount.ToString() + " eco-friendly materials";
-        badText.text = badCount.ToString() + " non-eco-friendly materials";
+        percentagePanel.SetActive(true);
 
+        goodText.text = goodCount + " eco-friendly materials";
+        badText.text = badCount + " non-eco-friendly materials";
 
-        if (percentageText != null)
+        if (score >= threshold)
         {
-            if (score >= threshold)
-            {
-                float t = (float)(score - threshold) / (maxScore - threshold);
-                float percent = Mathf.Lerp(minPercent, maxPercent, t);
-                percent = Mathf.Clamp(percent, minPercent, maxPercent);
+            float t = (float)(score - threshold) / (maxScore - threshold);
+            float percent = Mathf.Lerp(minPercent, maxPercent, t);
+            percent = Mathf.Clamp(percent, minPercent, maxPercent);
 
-                percentageText.text =
-                    $"You outperformed <color=#E236DD><b>{percent:F1}%</b></color> of players!";
-            }
-            else
-            {
-                percentageText.text = $"Wanna know more about eco-friendly materials?";
-            }
+            percentageText.text =
+                $"You outperformed <color=#E236DD><b>{percent:F1}%</b></color> of players!";
+        }
+        else
+        {
+            percentageText.text = "<b>Wanna Try Again?</b>";
         }
 
         StartCoroutine(ShowMaterialInfoAfterDelay());
@@ -205,13 +209,14 @@ public class GameManager : MonoBehaviour
     private IEnumerator ShowMaterialInfoAfterDelay()
     {
         materialPanel.SetActive(false);
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(4f);
 
         if (materials.Length > 0)
         {
             int randomIndex = Random.Range(0, materials.Length);
             MaterialInfo mat = materials[randomIndex];
 
+            percentagePanel.SetActive(false);
             materialPanel.SetActive(true);
             materialIconUI.sprite = mat.icon;
 
