@@ -176,8 +176,25 @@ public class GameManager : MonoBehaviour
         PlaySound(finishSound);
 
         summaryPanel.SetActive(true);
-        goodText.text = goodCount.ToString();
-        badText.text = badCount.ToString();
+        goodText.text = goodCount.ToString() + $" recyclable materials";
+        badText.text = badCount.ToString()+ $" non-recyclable materials";
+
+        if (percentageText != null)
+        {
+            if (score >= threshold)
+            {
+                float t = (float)(score - threshold) / (maxScore - threshold);
+                float percent = Mathf.Lerp(minPercent, maxPercent, t);
+                percent = Mathf.Clamp(percent, minPercent, maxPercent);
+
+                percentageText.text =
+                    $"You outperformed <color=#E236DD><b>{percent:F1}%</b></color> of players!";
+            }
+            else
+            {
+                percentageText.text = $"Wanna know more about eco-friendly materials?";
+            }
+        }
 
         StartCoroutine(ShowEcoTipAfterDelay());
     }
@@ -190,23 +207,6 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
 
         tipsPanel.SetActive(true);
-
-        if (percentageText != null)
-        {
-            if (score >= threshold)
-            {
-                float t = (float)(score - threshold) / (maxScore - threshold);
-                float percent = Mathf.Lerp(minPercent, maxPercent, t);
-                percent = Mathf.Clamp(percent, minPercent, maxPercent);
-
-                percentageText.text =
-                    $"You outperformed <color=#FF3B3B><b>{percent:F1}%</b></color> of players!";
-            }
-            else
-            {
-                percentageText.text = $"Wanna know more about eco-friendly materials?";
-            }
-        }
 
         string tip = ecoTips[Random.Range(0, ecoTips.Length)];
         ecoText.color = new Color(0.15f, 0.7f, 0.2f);
