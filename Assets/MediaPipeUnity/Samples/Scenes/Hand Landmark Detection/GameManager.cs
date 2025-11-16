@@ -1,7 +1,16 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 using System.Collections;
-using UnityEngine.SceneManagement;
+
+[System.Serializable]
+public class MaterialInfo
+{
+    public string name;   
+    public Sprite icon;    
+    [TextArea(2, 4)] public string description;
+    public bool isEcoFriendly;
+}
 
 public class GameManager : MonoBehaviour
 {
@@ -13,12 +22,12 @@ public class GameManager : MonoBehaviour
     public AudioClip finishSound;
     private AudioSource audioSource;
 
+    [Header("Score UI")]
+    public TMP_Text scoreText;
+
     [Header("Countdown UI")]
     public TMP_Text countdownText;
     public float countdownTime = 3f;
-
-    [Header("Score UI")]
-    public TMP_Text scoreText;
 
     [Header("Timer UI")]
     public TMP_Text timerText;
@@ -32,28 +41,19 @@ public class GameManager : MonoBehaviour
     public TMP_Text badText;
     public TMP_Text percentageText;
 
-    [Header("Tips UI")]
-    public GameObject tipsPanel;
-    public TMP_Text ecoText;
-
     [Header("Performance Settings")]
-    public int threshold = 6;    
-    public int maxScore = 15;   
+    public int threshold = 6;
+    public int maxScore = 15;
     public float minPercent = 60f;
     public float maxPercent = 98f;
 
-    [Header("Eco Tips")]
-    [TextArea(2, 4)]
-    public string[] ecoTips = {
-        "Choosing clothes made from recycled fibers.",
-        "Donating old clothes instead of throwing them away.",
-        "Buying second-hand to reduce carbon footprint.",
-        "Washing clothes in cold water to save energy.",
-        "Avoiding polyester to reduce microplastic pollution.",
-        "Extending the life of your clothes by repairing them.",
-        "Buying fewer but higher-quality clothes to reduce waste.",
-        "Supporting sustainable fashion brands."
-    };
+    [Header("Material Info UI")]
+    public GameObject materialPanel;
+    public Image materialIconUI;
+    public TMP_Text materialTextUI;
+
+    [Header("Materials List (8 items)")]
+    public MaterialInfo[] materials;
 
     private int score = 0;
     private int goodCount = 0;
@@ -61,23 +61,24 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        // Singleton
         if (Instance == null)
             Instance = this;
         else
             Destroy(gameObject);
 
+        // Audio source
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
             audioSource = gameObject.AddComponent<AudioSource>();
-
         audioSource.playOnAwake = false;
 
         StartCoroutine(StartCountdown());
 
+        // Init state
         timer = gameTime;
-
         summaryPanel.SetActive(false);
-        tipsPanel.SetActive(false);
+        materialPanel.SetActive(false);
     }
 
     private IEnumerator StartCountdown()
@@ -125,25 +126,23 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
     }
 
-
-
     void Update()
     {
-        if (!gameRunning && Input.GetKeyDown(KeyCode.Return))
-        {
-            RestartGame();
-        }
+        if (!gameRunning)
+            return;
 
-        if (!gameRunning) return;
-
-        UpdateScoreUI();
+        UpdateScoreText();
         UpdateTimer();
+
+        // Press Enter to restart
+        if (Input.GetKeyDown(KeyCode.Return))
+            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 
-    private void UpdateScoreUI()
+    private void UpdateScoreText()
     {
         if (scoreText != null)
-            scoreText.text = score.ToString();
+            scoreText.text = $"{score}";
     }
 
     private void UpdateTimer()
@@ -166,18 +165,22 @@ public class GameManager : MonoBehaviour
     {
         gameRunning = false;
 
+        // Stop spawner
         BallSpawner spawner = FindObjectOfType<BallSpawner>();
         if (spawner != null)
             spawner.enabled = false;
 
-        foreach (var ball in FindObjectsOfType<BallCatcher>())
+        // Destroy all balls
+        foreach (BallCatcher ball in FindObjectsOfType<BallCatcher>())
             Destroy(ball.gameObject);
 
         PlaySound(finishSound);
 
+        // Show summary
         summaryPanel.SetActive(true);
-        goodText.text = goodCount.ToString() + $" recyclable materials";
-        badText.text = badCount.ToString()+ $" non-recyclable materials";
+        goodText.text = goodCount.ToString() + " eco-friendly materials";
+        badText.text = badCount.ToString() + " non-eco-friendly materials";
+
 
         if (percentageText != null)
         {
@@ -196,27 +199,49 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        StartCoroutine(ShowEcoTipAfterDelay());
+        StartCoroutine(ShowMaterialInfoAfterDelay());
     }
 
-    private IEnumerator ShowEcoTipAfterDelay()
+    private IEnumerator ShowMaterialInfoAfterDelay()
     {
-        tipsPanel.SetActive(false);
+        materialPanel.SetActive(false);
+        yield return new WaitForSeconds(1.2f);
 
-    
-        yield return new WaitForSeconds(1.5f);
+        if (materials.Length > 0)
+        {
+            int randomIndex = Random.Range(0, materials.Length);
+            MaterialInfo mat = materials[randomIndex];
 
-        tipsPanel.SetActive(true);
+            materialPanel.SetActive(true);
+            materialIconUI.sprite = mat.icon;
 
-        string tip = ecoTips[Random.Range(0, ecoTips.Length)];
-        ecoText.color = new Color(0.15f, 0.7f, 0.2f);
-        ecoText.text = tip;
+            string ecoWord = "<color=#4BCF6A><b>Eco-Friendly</b></color>";
+            string nonEcoWord = "<color=#FF4A4A><b>Non-Eco-Friendly</b></color>";
+
+            string desc = mat.description;
+
+            if (mat.isEcoFriendly)
+            {
+                desc = desc.Replace("Eco-Friendly", ecoWord);
+            }
+            else
+            {
+                desc = desc.Replace("Non-Eco-Friendly", nonEcoWord);
+            }
+
+            materialTextUI.text =
+                $"<b>{mat.name}</b>\n<size=80%>{desc}</size>";
+        }
+    }
+
+    public bool IsGameRunning()
+    {
+        return gameRunning;
     }
 
     public void OnGoodBallCaught()
     {
         if (!gameRunning) return;
-
         score++;
         goodCount++;
         PlaySound(goodSound);
@@ -225,20 +250,14 @@ public class GameManager : MonoBehaviour
     public void OnBadBallCaught()
     {
         if (!gameRunning) return;
-
-        score = Mathf.Max(0, score - 1);
+        score++;
         badCount++;
         PlaySound(badSound);
     }
 
     private void PlaySound(AudioClip clip)
     {
-        if (clip != null)
+        if (audioSource != null && clip != null)
             audioSource.PlayOneShot(clip);
-    }
-
-    public void RestartGame()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

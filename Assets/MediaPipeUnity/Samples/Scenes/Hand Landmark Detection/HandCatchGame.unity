@@ -156,8 +156,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 26}
-  m_SizeDelta: {x: 500, y: 50}
+  m_AnchoredPosition: {x: 0, y: -54.8}
+  m_SizeDelta: {x: 550, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &52695946
 MonoBehaviour:
@@ -188,8 +188,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4292687586
-  m_fontColor: {r: 0.8862745, g: 0.21176471, b: 0.8666667, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -206,8 +206,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34.23
-  m_fontSizeBase: 34.23
+  m_fontSize: 34
+  m_fontSizeBase: 34
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -419,7 +419,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Fun Facts
+  m_text: Do You Know?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a1b83a11431d2784eb91fcf249169401, type: 2}
   m_sharedMaterial: {fileID: -2454208749174302852, guid: a1b83a11431d2784eb91fcf249169401, type: 2}
@@ -530,7 +530,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 50.4}
+  m_AnchoredPosition: {x: 0, y: 190}
   m_SizeDelta: {x: 600, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &300116739
@@ -1481,6 +1481,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1064799461}
   - component: {fileID: 1064799468}
+  - component: {fileID: 1064799469}
   m_Layer: 0
   m_Name: Solution
   m_TagString: Untagged
@@ -1519,6 +1520,20 @@ MonoBehaviour:
   screen: {fileID: 1006057043}
   runningMode: 0
   _handLandmarkerResultAnnotationController: {fileID: 1006057044}
+--- !u!114 &1064799469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064799459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e171965c8e283974f87fbb4b4fa54cdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runner: {fileID: 1064799468}
+  fingerTipPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1207407042
 GameObject:
   m_ObjectHideFlags: 0
@@ -1963,7 +1978,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 85.4}
+  m_AnchoredPosition: {x: 0, y: 250}
   m_SizeDelta: {x: 600, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1450497153
@@ -2080,7 +2095,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1460664433
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2232,7 +2247,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 37.37, y: -129.2}
-  m_SizeDelta: {x: 699.9, y: 50}
+  m_SizeDelta: {x: 451.77, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1504342937
 MonoBehaviour:
@@ -2254,7 +2269,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Catch the Recycable Materials
+  m_text: Catch them ALL !
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a1b83a11431d2784eb91fcf249169401, type: 2}
   m_sharedMaterial: {fileID: -2454208749174302852, guid: a1b83a11431d2784eb91fcf249169401, type: 2}
@@ -2366,7 +2381,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -40}
-  m_SizeDelta: {x: 450, y: 50}
+  m_SizeDelta: {x: 501.3, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1694690315
 MonoBehaviour:
@@ -2388,7 +2403,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Congrats!
+  m_text: Great Job!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a1b83a11431d2784eb91fcf249169401, type: 2}
   m_sharedMaterial: {fileID: -2454208749174302852, guid: a1b83a11431d2784eb91fcf249169401, type: 2}
@@ -2499,7 +2514,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 145}
+  m_AnchoredPosition: {x: 0, y: 315}
   m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1719359943
@@ -2629,21 +2644,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goodBallPrefabs:
-  - {fileID: 6417806191274053752, guid: 7021e9956ce32e948b6ff1edeb512d66, type: 3}
-  - {fileID: 6417806191274053752, guid: 3d698b5c36f1aab40bd8173c1a9862c3, type: 3}
-  - {fileID: 6417806191274053752, guid: dfedc9c40dc45e34c881255a8beebbb5, type: 3}
-  - {fileID: 6417806191274053752, guid: a2a69f1ffd4273241a48f927fd4007a3, type: 3}
+  - {fileID: 6417806191274053752, guid: 2a2fe23761ae7ab499fad02096f4cce8, type: 3}
   badBallPrefabs:
-  - {fileID: 6417806191274053752, guid: 1ed7184026a95db46b47751db2defae2, type: 3}
-  - {fileID: 6417806191274053752, guid: c3e8d2b04409eca499c39b81179b12c7, type: 3}
-  - {fileID: 6417806191274053752, guid: 66fe837fe8442ef46a57a3143b64e494, type: 3}
-  - {fileID: 6417806191274053752, guid: a989ce7336b49ce4387b0a278751fd7b, type: 3}
-  goodRate: 0.5
-  handTracker: {fileID: 0}
-  spawnInterval: 1.5
+  - {fileID: 4764881130696146956, guid: 1beb8013b6c4b4d4e8ddedee2c5ee3df, type: 3}
+  goodRate: 0.4
   spawnHeight: 12
-  xRange: 2
+  xRange: 2.5
   zPosition: 0
+  minSpawnDelay: 0.3
+  maxSpawnDelay: 2.5
 --- !u!4 &1797146791
 Transform:
   m_ObjectHideFlags: 0
@@ -2785,29 +2794,79 @@ MonoBehaviour:
   goodSound: {fileID: 8300000, guid: 385a34ca20b110d40970d1e36773fabe, type: 3}
   badSound: {fileID: 8300000, guid: 291c53d6a93380b41b57ad760f139d9d, type: 3}
   finishSound: {fileID: 8300000, guid: c52dea6f4e434fd4ea096e864ffc36a2, type: 3}
+  scoreText: {fileID: 580459550}
   countdownText: {fileID: 1243438471}
   countdownTime: 3
-  scoreText: {fileID: 580459550}
   timerText: {fileID: 1368251384}
   gameTime: 20
   summaryPanel: {fileID: 568611792}
   goodText: {fileID: 1450497153}
   badText: {fileID: 300116739}
   percentageText: {fileID: 1460664434}
-  tipsPanel: {fileID: 430087032}
-  ecoText: {fileID: 52695946}
-  threshold: 4
-  maxScore: 10
+  threshold: 6
+  maxScore: 15
   minPercent: 60
   maxPercent: 98
-  ecoTips:
-  - Recycling one T-shirt saves up to 2,700 liters of water.
-  - Choosing natural fibers like cotton and wool reduces microplastic pollution.
-  - Donating old clothes extends their lifecycle and reduces waste.
-  - Fast fashion garments are often worn less than 7 times before being thrown away.
-  - Upcycling fabric scraps can reduce textile waste by up to 30%.
-  - Synthetic fabrics like polyester can take over 200 years to decompose.
-  - Buying second-hand reduces carbon emissions and saves resources.
+  materialPanel: {fileID: 430087032}
+  materialIconUI: {fileID: 2011050744}
+  materialTextUI: {fileID: 52695946}
+  materials:
+  - name: Cotton
+    icon: {fileID: 21300000, guid: eecc7c8293e24de459518f6c4346eea1, type: 3}
+    description: '<color=#4BCF6A><b>Eco-Friendly</b></color>
+
+      Soft, breathable,
+      and biodegradable.'
+    isEcoFriendly: 1
+  - name: Wool
+    icon: {fileID: 21300000, guid: cd4e1cd3b5d83c94faa6cf8dd60f6256, type: 3}
+    description: '<color=#4BCF6A><b>Eco-Friendly</b></color>
+
+      Renewable and
+      long-lasting, reducing waste over time.'
+    isEcoFriendly: 1
+  - name: Linen
+    icon: {fileID: 21300000, guid: a37ace875160a5540b5a1b3e35c3a56b, type: 3}
+    description: '<color=#4BCF6A><b>Eco-Friendly</b></color>
+
+      Low-water usage
+      and highly durable.'
+    isEcoFriendly: 1
+  - name: Silk
+    icon: {fileID: 21300000, guid: 6beae0887f5df4345b6a7efac7ca0df5, type: 3}
+    description: '<color=#4BCF6A><b>Eco-Friendly</b></color>
+
+      Biodegradable
+      and long-lasting, made from natural protein fiber.'
+    isEcoFriendly: 1
+  - name: Polyster
+    icon: {fileID: 21300000, guid: f3f0f3e08c331bd42945890310976573, type: 3}
+    description: '<color=#FF4A4A><b>Non-Eco-Friendly</b></color>
+
+      Made from
+      petroleum and releases microplastics when washed.'
+    isEcoFriendly: 0
+  - name: Nylon
+    icon: {fileID: 21300000, guid: a5b431e2dc9f2fb4180e48cffee98e95, type: 3}
+    description: '<color=#FF4A4A><b>Non-Eco-Friendly</b></color>
+
+      High energy
+      production and contributes to microplastic pollution.'
+    isEcoFriendly: 0
+  - name: Acrylic
+    icon: {fileID: 21300000, guid: 6a00c07d70154764d8936e20b624b7c3, type: 3}
+    description: '<color=#FF4A4A><b>Non-Eco-Friendly</b></color>
+
+      Uses toxic
+      chemicals in production and sheds lots of microplastics.'
+    isEcoFriendly: 0
+  - name: Traditional Cotton
+    icon: {fileID: 21300000, guid: 9330b1c987245124aa810b13cf8a3ff3, type: 3}
+    description: '<color=#FF4A4A><b>Non-Eco-Friendly</b></color>
+
+      Requires
+      massive water and pesticide use in conventional farming.'
+    isEcoFriendly: 0
 --- !u!4 &1946875897
 Transform:
   m_ObjectHideFlags: 0
@@ -2915,40 +2974,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1982762071 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 659757005446665242, guid: e868fe9609f9b7441bf17f5e1e82cb7b, type: 3}
-  m_PrefabInstance: {fileID: 6069731113718030095}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1982762078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1982762071}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e171965c8e283974f87fbb4b4fa54cdb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  runner: {fileID: 1064799468}
-  fingerTipPos: {x: 0, y: 0, z: 0}
-  hasHand: 0
---- !u!114 &1982762079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1982762071}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be6477b6d810342458e53cae178a3ce2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  handTracker: {fileID: 1982762078}
-  followSpeed: 20
 --- !u!1 &2011050742
 GameObject:
   m_ObjectHideFlags: 0
@@ -2966,7 +2991,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2011050743
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2983,7 +3008,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 61.87}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2011050744
@@ -3061,8 +3086,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 260.56}
-  m_SizeDelta: {x: 600, y: 400}
+  m_AnchoredPosition: {x: 0, y: 310}
+  m_SizeDelta: {x: 600, y: 500}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &2142315780
 MonoBehaviour:
@@ -3102,85 +3127,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2142315778}
   m_CullTransparentMesh: 1
---- !u!1001 &6069731113718030095
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 659757005446665242, guid: e868fe9609f9b7441bf17f5e1e82cb7b, type: 3}
-      propertyPath: m_Name
-      value: Basket
-      objectReference: {fileID: 0}
-    - target: {fileID: 1122268715606362985, guid: e868fe9609f9b7441bf17f5e1e82cb7b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1122268715606362985, guid: e868fe9609f9b7441bf17f5e1e82cb7b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.55
-      objectReference: {fileID: 0}
-    - target: {fileID: 1122268715606362985, guid: e868fe9609f9b7441bf17f5e1e82cb7b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1122268715606362985, guid: e868fe9609f9b7441bf17f5e1e82cb7b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1122268715606362985, guid: e868fe9609f9b7441bf17f5e1e82cb7b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1122268715606362985, guid: e868fe9609f9b7441bf17f5e1e82cb7b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1122268715606362985, guid: e868fe9609f9b7441bf17f5e1e82cb7b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1122268715606362985, guid: e868fe9609f9b7441bf17f5e1e82cb7b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1122268715606362985, guid: e868fe9609f9b7441bf17f5e1e82cb7b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1122268715606362985, guid: e868fe9609f9b7441bf17f5e1e82cb7b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4042748525495952692, guid: e868fe9609f9b7441bf17f5e1e82cb7b, type: 3}
-      propertyPath: m_Size.x
-      value: 2.2162428
-      objectReference: {fileID: 0}
-    - target: {fileID: 4042748525495952692, guid: e868fe9609f9b7441bf17f5e1e82cb7b, type: 3}
-      propertyPath: m_Size.y
-      value: 0.836599
-      objectReference: {fileID: 0}
-    - target: {fileID: 4042748525495952692, guid: e868fe9609f9b7441bf17f5e1e82cb7b, type: 3}
-      propertyPath: m_Center.x
-      value: -0.024211884
-      objectReference: {fileID: 0}
-    - target: {fileID: 4042748525495952692, guid: e868fe9609f9b7441bf17f5e1e82cb7b, type: 3}
-      propertyPath: m_Center.y
-      value: -0.089316666
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 659757005446665242, guid: e868fe9609f9b7441bf17f5e1e82cb7b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1982762078}
-    - targetCorrespondingSourceObject: {fileID: 659757005446665242, guid: e868fe9609f9b7441bf17f5e1e82cb7b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1982762079}
-  m_SourcePrefab: {fileID: 100100000, guid: e868fe9609f9b7441bf17f5e1e82cb7b, type: 3}
 --- !u!1001 &8571076842648159877
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3442,4 +3388,3 @@ SceneRoots:
   - {fileID: 1797146791}
   - {fileID: 1946875897}
   - {fileID: 1358020255}
-  - {fileID: 6069731113718030095}
