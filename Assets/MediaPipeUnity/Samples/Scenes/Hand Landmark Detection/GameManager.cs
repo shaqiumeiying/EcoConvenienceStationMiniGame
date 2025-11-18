@@ -139,7 +139,6 @@ public class GameManager : MonoBehaviour
         UpdateScoreText();
         UpdateTimer();
 
-        // Press Enter to restart
         if (Input.GetKeyDown(KeyCode.Return))
             UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
