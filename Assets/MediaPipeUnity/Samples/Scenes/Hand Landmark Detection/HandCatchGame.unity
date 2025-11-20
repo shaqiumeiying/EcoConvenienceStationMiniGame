@@ -2782,14 +2782,14 @@ MonoBehaviour:
   countdownText: {fileID: 1243438471}
   countdownTime: 3
   timerText: {fileID: 1368251384}
-  gameTime: 20
+  gameTime: 30
   summaryPanel: {fileID: 568611792}
   goodText: {fileID: 1450497153}
   badText: {fileID: 300116739}
   percentageText: {fileID: 1460664434}
   percentagePanel: {fileID: 79564959}
-  threshold: 5
-  maxScore: 30
+  threshold: 6
+  maxScore: 25
   minPercent: 50
   maxPercent: 98
   materialPanel: {fileID: 2142315778}

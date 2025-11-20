@@ -208,7 +208,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator ShowMaterialInfoAfterDelay()
     {
         materialPanel.SetActive(false);
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(2f);
 
         if (materials.Length > 0)
         {
