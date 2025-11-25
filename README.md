@@ -54,7 +54,7 @@ Triggered upon game completion or high performance.
 
 ## Deployment & Usage
 
-1. Upon cloning this repo, open with Unity 2022.3.6.2f2.
+1. Upon cloning this repo, open with Unity 2022.3.6.2f2. Or directly import [this package](https://thecdm.sharepoint.com/:u:/s/projects/EcXtn6W86EpMk2dflCm-vNwBvfTaS8znNEzfJk7ACBpE2Q?e=3JWOcI) to a new Universal 3D Unity Project.
 2. To make changes, navitage to Assets -> MediaPipeUnity -> Samples -> Scenes -> HandLandmark Detection.
 3. Enter scene "HandCatchGame".
 4. Hit play.
